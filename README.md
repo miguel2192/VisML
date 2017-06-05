@@ -1,2 +1,2 @@
 # VisML
-Coupling visualization with machine learning
+A full stack web application framework to couple front-end visualization with back-end machine learning

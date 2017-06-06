@@ -1,0 +1,2 @@
+include versioneer.py
+include visml/_version.py

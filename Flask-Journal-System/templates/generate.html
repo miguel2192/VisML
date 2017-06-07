@@ -1,0 +1,19 @@
+
+{% block content %}
+
+	<h1 class="page-header">{{ name }}'s Journal Pages</h1>
+	<hr>
+	{% for page in pages %}
+
+
+		  <div class="jumbotron">
+			<h2>{{ page.title }} </h2>
+			<p><strong><em>{{ page.date }} </em></strong> </p>
+			<p> {{ page.description}}
+			
+			<br/><br/>
+			{{ page.content|safe }}
+		  </div>
+		  <hr>
+	{% endfor %}
+{% endblock %}

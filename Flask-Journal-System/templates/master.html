@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<script src="{{  url_for('static', filename='js/wysihtml.toolbar.min.js') }}"></script>
+	<script src="{{  url_for('static', filename='js/wysihtml.adv_ext.js') }}"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="http://designmodo.github.io/Flat-UI/dist/css/vendor/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css">
+<style type="text/css">
+	body{
+
+		padding: 10px;
+	}
+
+    
+</style>	
+
+</head>
+<body>
+	<br>
+	<br>
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

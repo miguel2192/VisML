@@ -1,0 +1,14 @@
+<!-- {% extends "master.html" %} -->
+{% block content %}
+	<h1>Journal Page Overview</h1>
+	<div class="jumbotron">
+		<h2>{{ title }} </h2>
+		<p><strong><em>{{ date }} </em></strong> </p>
+		<a href="{{ url_for('edit_page', page_id=id) }}"><small>Edit</small></a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="{{ url_for('delete_page', page_id=id) }}"><small>Delete</small></a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="{{ url_for('generate_page', page_id=id) }}"><small>Generate PDF</small></a>
+		<br/><br/>
+		{{ content|safe }}
+	</div>
+	<a class="btn btn-primary" href="{{ url_for('dashboard') }}">Go back</a>
+{% endblock %}

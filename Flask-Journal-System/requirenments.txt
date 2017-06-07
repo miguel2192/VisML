@@ -1,0 +1,9 @@
+python:2.7
+flask
+flask_wtf
+flask_login
+flask_sqlalchemy
+flask_bootstrap
+pdfkit
+flask_whooshalchemy
+wkhtmltopdf

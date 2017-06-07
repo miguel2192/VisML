@@ -1,0 +1,49 @@
+{% extends "master.html" %}
+{% block content %}
+	<div>
+	<!-- <a class="btn btn-primary" href="{{ url_for('new_page') }}">Create New Page</a> -->
+	    <h1 class="page-header">Welcome, {{ name }}</h1>
+	     <a class="btn btn-primary" href="{{ url_for('signup') }}">New User</a>
+	     <a class="btn btn-primary" href="{{ url_for('generate') }}">Generate PDF Report</a>
+	     <p style="text-align: right"><a class="btn btn-primary"  href="{{ url_for('logout') }}">Log Out</a></p>
+    	
+
+    </div>
+	<div class="jumbotron text-center">
+	 
+		<h1>Journal Mode</h1>
+		<a class="btn btn-primary" href="{{ url_for('new_page') }}">Create New Page</a>
+
+		<br>
+		<!-- <p style="text-align: right"><a href="{{ url_for('logout') }}">Log Out</a></p> -->
+    	<!-- <div class=col-sm-3 col-sm-offset-1 blog-sidebar text-center"> -->
+    		<div class="sidebar-module sidebar-module-inset">
+
+    				<br>
+    		
+    				<form class="form-inline" method="GET" action="search">
+    					<div class="form-inline">
+    						<!-- <label for="query">Name</label> -->
+    						<input placeholder="Enter page title.." type="text" class="form-control" name="query" id="query">
+    						<button type="submit" class=" btn btn-primary">Search</button>
+
+    					</div>
+
+    					
+    				</form>
+    		</div>
+    	<!-- </div> -->
+    	<!-- dsf -->
+ 
+	</div>
+
+	
+	{% for page in pages %}
+
+	  <div class="jumbotron text-center">
+		<a href="{{ url_for('view_page', page_id=page.id) }}"><h3>{{ page.title|truncate(150) }}</h3></a>
+		<small><strong><em>{{ page.date}}</em></strong></small>
+		<p>{{ page.description|truncate(350) }}</p>
+	  </div>
+	{% endfor %}
+{% endblock %}

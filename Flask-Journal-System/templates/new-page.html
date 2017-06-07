@@ -1,0 +1,38 @@
+{% extends "master.html" %}
+{% block content %}
+	
+	<h1>Text Editor</h1>
+	<form action="{{ url_for('save_page') }}" method="POST">
+		<input placeholder="Enter title here.." type="text" name="title"/>
+		<br>
+		<input placeholder="Enter description here.." type="text" name="description"/>
+		<br>
+		<input placeholder="Enter Date.." type="text" name="date"/>
+		<br>
+		<br>
+
+		<!-- WYSIWYG editor -->
+		<div id="toolbar">
+		  <a class="label label-primary" data-wysihtml5-command="bold">bold</a>
+		  <a class="label label-primary" data-wysihtml5-command="italic">italic</a>
+		  <a class="label label-primary" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
+		  <a class="label label-primary" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
+		</div>
+		<textarea id="editor" rows="20", cols="100" name="content" data-placeholder="Enter content here..">
+		</textarea>
+
+		<br/>
+		<div>
+		<input type="submit" class="btn btn-info" value="Submit"/>
+			<a class="btn btn-primary" href="{{ url_for('dashboard') }}">Go back</a>
+		</div>
+	</form>
+
+	<script>
+	  var editor = new wysihtml5.Editor('editor', {
+	    toolbar: 'toolbar',
+	    parserRules:  wysihtml5ParserRules
+	  });
+	</script>
+
+{% endblock %}
